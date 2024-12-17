@@ -1,16 +1,23 @@
 var fs = require('fs');
 
 var readMeOne = fs.readFile("readme.txt", "utf8", function(err, data) {
-    var waitTill = new Date(new Date().getTime() + 1 * 1000);
+    var waitTill = new Date(new Date().getTime() + 3 * 1000);
     while (waitTill > new Date()) {}
     console.log("first async");
 });
 
+
+console.log(readMeOne)
+
 var readMeTwo = fs.readFile("readme.txt", "utf8", function(err, data) {
-    var waitTill = new Date(new Date().getTime() + 3 * 1000);
+    var waitTill = new Date(new Date().getTime() + 7 * 1000);
     while (waitTill > new Date()) {}
     console.log("second async");
 });
+
+
+console.log(readMeTwo)
+
 
 console.log("finished111");
 
